@@ -45,7 +45,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty.
         let text = productName.text ?? ""
-        productButton.isEnabled = !text.isEmpty
+         productButton.isEnabled = !text.isEmpty
+        
     }
     
     

@@ -127,6 +127,7 @@
                                     <outlet property="productName" destination="mtH-DA-Qtz" id="KhC-LQ-Tlq"/>
                                     <outlet property="productPrice" destination="dbx-cr-8KF" id="nAq-cx-Juc"/>
                                     <outlet property="productReview" destination="kZe-C1-r7g" id="j1H-dq-stg"/>
+                                    <segue destination="63e-s2-bzI" kind="show" identifier="ShowDetail" id="HBk-rV-SnD"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -140,6 +141,179 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ymy-k7-6cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="104.8" y="-88.605697151424295"/>
+        </scene>
+        <!--รายละเอียดสินค้า-->
+        <scene sceneID="zDf-lZ-vvO">
+            <objects>
+                <viewController id="rl9-5k-wPb" customClass="ShowDetailViewController" customModule="Productreview2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="38m-rI-0sf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anitech" translatesAutoresizingMaskIntoConstraints="NO" id="fYT-ZJ-IOW">
+                                <rect key="frame" x="93" y="64" width="189" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="9rJ-LD-IaX"/>
+                                    <constraint firstAttribute="height" constant="128" id="HnK-3C-aUU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ชื่อสินค้า:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEc-qb-7a6">
+                                <rect key="frame" x="16" y="202" width="63" height="27"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ราคา:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHn-CP-Pse">
+                                <rect key="frame" x="39" y="237" width="40" height="27"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLe-fy-rg1">
+                                <rect key="frame" x="87" y="237" width="272" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="UVB-rz-bus"/>
+                                    <constraint firstAttribute="width" constant="272" id="uBv-o7-lcP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RaD-Ee-Hdp">
+                                <rect key="frame" x="95" y="272" width="264" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ObK-eQ-nXQ"/>
+                                    <constraint firstAttribute="width" constant="264" id="QC7-2j-ZSM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายละเอียด:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEG-qb-Lzw">
+                                <rect key="frame" x="16" y="272" width="80" height="27"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รีวิว" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wud-cd-LyP">
+                                <rect key="frame" x="16" y="414" width="26" height="27"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dog-2I-xWK">
+                                <rect key="frame" x="282" y="408" width="77" height="39"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <state key="normal" title="รีวิวทั้งหมด"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9o-tk-hbg">
+                                <rect key="frame" x="50" y="470" width="30" height="30"/>
+                                <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZzJ-NC-zqe">
+                                <rect key="frame" x="141" y="469" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvy-nX-CqK">
+                                <rect key="frame" x="232" y="471" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KG6-NG-ckF">
+                                <rect key="frame" x="88" y="473" width="40" height="27"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egJ-ml-pYB">
+                                <rect key="frame" x="179" y="473" width="40" height="27"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYd-ol-q0O">
+                                <rect key="frame" x="270" y="472" width="40" height="27"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wc-M7-tTv">
+                                <rect key="frame" x="93" y="202" width="266" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="Y7u-Kf-h0N"/>
+                                    <constraint firstAttribute="height" constant="27" id="deK-hd-RCf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wLe-fy-rg1" firstAttribute="top" secondItem="3Wc-M7-tTv" secondAttribute="bottom" constant="8" id="3Wt-Cd-sYx"/>
+                            <constraint firstItem="o9o-tk-hbg" firstAttribute="leading" secondItem="F7l-eT-QnD" secondAttribute="leading" constant="50" id="3ta-36-gws"/>
+                            <constraint firstItem="mYd-ol-q0O" firstAttribute="top" secondItem="dog-2I-xWK" secondAttribute="bottom" constant="25" id="44l-xV-pvm"/>
+                            <constraint firstItem="egJ-ml-pYB" firstAttribute="top" secondItem="RaD-Ee-Hdp" secondAttribute="bottom" constant="73" id="4BQ-yI-iih"/>
+                            <constraint firstItem="oEG-qb-Lzw" firstAttribute="top" secondItem="PHn-CP-Pse" secondAttribute="bottom" constant="8" id="8O5-7F-1n3"/>
+                            <constraint firstItem="F7l-eT-QnD" firstAttribute="trailing" secondItem="oEG-qb-Lzw" secondAttribute="trailing" constant="279" id="8Si-Kg-DcH"/>
+                            <constraint firstItem="dEc-qb-7a6" firstAttribute="top" secondItem="F7l-eT-QnD" secondAttribute="top" constant="138" id="9Fy-rh-7Mn"/>
+                            <constraint firstItem="F7l-eT-QnD" firstAttribute="trailing" secondItem="3Wc-M7-tTv" secondAttribute="trailing" constant="16" id="EOT-w8-FaR"/>
+                            <constraint firstItem="F7l-eT-QnD" firstAttribute="trailing" secondItem="fYT-ZJ-IOW" secondAttribute="trailing" constant="93" id="Ie5-LE-ghh"/>
+                            <constraint firstItem="F7l-eT-QnD" firstAttribute="trailing" secondItem="mYd-ol-q0O" secondAttribute="trailing" constant="65" id="Kig-Wz-0Yi"/>
+                            <constraint firstItem="ZzJ-NC-zqe" firstAttribute="top" secondItem="RaD-Ee-Hdp" secondAttribute="bottom" constant="69" id="P1Y-0w-hsh"/>
+                            <constraint firstItem="gvy-nX-CqK" firstAttribute="top" secondItem="RaD-Ee-Hdp" secondAttribute="bottom" constant="71" id="PZD-kT-aKj"/>
+                            <constraint firstItem="wud-cd-LyP" firstAttribute="top" secondItem="oEG-qb-Lzw" secondAttribute="bottom" constant="115" id="Pnu-Rn-Up6"/>
+                            <constraint firstItem="PHn-CP-Pse" firstAttribute="leading" secondItem="F7l-eT-QnD" secondAttribute="leading" constant="39" id="Pp0-7e-3KA"/>
+                            <constraint firstItem="PHn-CP-Pse" firstAttribute="top" secondItem="dEc-qb-7a6" secondAttribute="bottom" constant="8" id="Rv7-rK-xMh"/>
+                            <constraint firstItem="KG6-NG-ckF" firstAttribute="top" secondItem="RaD-Ee-Hdp" secondAttribute="bottom" constant="73" id="STH-t7-OFa"/>
+                            <constraint firstItem="RaD-Ee-Hdp" firstAttribute="top" secondItem="wLe-fy-rg1" secondAttribute="bottom" constant="8" id="UVh-bk-hPT"/>
+                            <constraint firstItem="RaD-Ee-Hdp" firstAttribute="leading" secondItem="F7l-eT-QnD" secondAttribute="leading" constant="95" id="VUR-7S-TDI"/>
+                            <constraint firstItem="dog-2I-xWK" firstAttribute="leading" secondItem="wud-cd-LyP" secondAttribute="trailing" constant="240" id="WV0-jZ-Nz1"/>
+                            <constraint firstItem="F7l-eT-QnD" firstAttribute="trailing" secondItem="wLe-fy-rg1" secondAttribute="trailing" constant="16" id="X5b-uI-cbx"/>
+                            <constraint firstItem="o9o-tk-hbg" firstAttribute="top" secondItem="oEG-qb-Lzw" secondAttribute="bottom" constant="171" id="YWH-6x-w6Y"/>
+                            <constraint firstItem="dEc-qb-7a6" firstAttribute="leading" secondItem="F7l-eT-QnD" secondAttribute="leading" constant="16" id="Zht-cB-USA"/>
+                            <constraint firstItem="oEG-qb-Lzw" firstAttribute="leading" secondItem="F7l-eT-QnD" secondAttribute="leading" constant="16" id="do0-eS-eAb"/>
+                            <constraint firstItem="fYT-ZJ-IOW" firstAttribute="top" secondItem="F7l-eT-QnD" secondAttribute="top" id="hiC-Yw-R8Z"/>
+                            <constraint firstItem="dog-2I-xWK" firstAttribute="top" secondItem="RaD-Ee-Hdp" secondAttribute="bottom" constant="8" id="hjv-ec-aWc"/>
+                            <constraint firstItem="KG6-NG-ckF" firstAttribute="leading" secondItem="o9o-tk-hbg" secondAttribute="trailing" constant="8" id="hk3-Cz-sDQ"/>
+                            <constraint firstItem="3Wc-M7-tTv" firstAttribute="top" secondItem="fYT-ZJ-IOW" secondAttribute="bottom" constant="10" id="iOL-xT-uCB"/>
+                            <constraint firstItem="3Wc-M7-tTv" firstAttribute="leading" secondItem="dEc-qb-7a6" secondAttribute="trailing" constant="14" id="k1J-BI-r27"/>
+                            <constraint firstItem="gvy-nX-CqK" firstAttribute="leading" secondItem="egJ-ml-pYB" secondAttribute="trailing" constant="13" id="kaZ-35-gEy"/>
+                            <constraint firstItem="egJ-ml-pYB" firstAttribute="leading" secondItem="ZzJ-NC-zqe" secondAttribute="trailing" constant="8" id="mtJ-1I-smM"/>
+                            <constraint firstItem="mYd-ol-q0O" firstAttribute="leading" secondItem="gvy-nX-CqK" secondAttribute="trailing" constant="8" id="r8Y-YA-P7P"/>
+                            <constraint firstItem="ZzJ-NC-zqe" firstAttribute="leading" secondItem="KG6-NG-ckF" secondAttribute="trailing" constant="13" id="sHs-Rl-Zon"/>
+                            <constraint firstItem="fYT-ZJ-IOW" firstAttribute="leading" secondItem="F7l-eT-QnD" secondAttribute="leading" constant="93" id="ssB-UP-hIN"/>
+                            <constraint firstItem="wLe-fy-rg1" firstAttribute="leading" secondItem="PHn-CP-Pse" secondAttribute="trailing" constant="8" id="urL-Am-1In"/>
+                            <constraint firstItem="wud-cd-LyP" firstAttribute="leading" secondItem="F7l-eT-QnD" secondAttribute="leading" constant="16" id="v4e-nD-3wz"/>
+                            <constraint firstItem="F7l-eT-QnD" firstAttribute="trailing" secondItem="dog-2I-xWK" secondAttribute="trailing" constant="16" id="xaT-IC-4M4"/>
+                            <constraint firstItem="F7l-eT-QnD" firstAttribute="trailing" secondItem="RaD-Ee-Hdp" secondAttribute="trailing" constant="16" id="zF8-UM-SpX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="F7l-eT-QnD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="รายละเอียดสินค้า" id="zAr-jj-yzA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="89B-nC-RaM">
+                            <connections>
+                                <action selector="Cancle:" destination="rl9-5k-wPb" id="ki5-6w-Ag6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="HmL-Se-Q2f">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="lqF-aU-dOK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="productNames" destination="3Wc-M7-tTv" id="T0d-FC-BJH"/>
+                        <outlet property="productPrice" destination="wLe-fy-rg1" id="CPJ-lM-JZ4"/>
+                        <outlet property="productdesc" destination="RaD-Ee-Hdp" id="cBq-pK-JGW"/>
+                        <outlet property="productimage" destination="fYT-ZJ-IOW" id="y0U-au-Zkf"/>
+                        <outlet property="reviewGreen" destination="KG6-NG-ckF" id="ZBL-JV-McP"/>
+                        <outlet property="reviewRed" destination="mYd-ol-q0O" id="FB3-Wm-vyC"/>
+                        <outlet property="reviewYellow" destination="egJ-ml-pYB" id="lTH-gA-JgC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wIN-c7-ziN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1938" y="-101"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -272,7 +446,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1970.4000000000001" y="-89.505247376311857"/>
+            <point key="canvasLocation" x="2909.5999999999999" y="-89.505247376311857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xFt-mu-1hZ">
@@ -308,11 +482,33 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bF-84-ajX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031.2" y="-89.505247376311857"/>
+            <point key="canvasLocation" x="908" y="646"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qgH-5Z-C4A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="63e-s2-bzI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="REY-D7-BEt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rl9-5k-wPb" kind="relationship" relationship="rootViewController" id="X4T-T0-a4I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eHc-ky-CXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839" y="-90"/>
         </scene>
     </scenes>
     <resources>
         <image name="addpictrue" width="100" height="100"/>
         <image name="addproduct" width="128" height="128"/>
+        <image name="anitech" width="425" height="425"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lqF-aU-dOK"/>
+    </inferredMetricsTieBreakers>
 </document>
