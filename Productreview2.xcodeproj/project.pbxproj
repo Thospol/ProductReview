@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC76EB9720EA1DE900184EA7 /* ShowReviewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9620EA1DE900184EA7 /* ShowReviewCollectionViewController.swift */; };
+		EC76EB9920EA25E900184EA7 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */; };
+		EC76EB9B20EA3D5D00184EA7 /* ReviewProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9A20EA3D5D00184EA7 /* ReviewProduct.swift */; };
+		EC76EB9D20EA7A8100184EA7 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9C20EA7A8100184EA7 /* AddReviewViewController.swift */; };
 		ECFF4B9620E7ABC2000C57FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFF4B9520E7ABC2000C57FA /* AppDelegate.swift */; };
 		ECFF4B9820E7ABC2000C57FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFF4B9720E7ABC2000C57FA /* ViewController.swift */; };
 		ECFF4B9B20E7ABC2000C57FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECFF4B9920E7ABC2000C57FA /* Main.storyboard */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC76EB9620EA1DE900184EA7 /* ShowReviewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowReviewCollectionViewController.swift; sourceTree = "<group>"; };
+		EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC76EB9A20EA3D5D00184EA7 /* ReviewProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProduct.swift; sourceTree = "<group>"; };
+		EC76EB9C20EA7A8100184EA7 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		ECFF4B9220E7ABC2000C57FA /* Productreview2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Productreview2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFF4B9520E7ABC2000C57FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECFF4B9720E7ABC2000C57FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +85,11 @@
 				ECFF4B9C20E7ABC2000C57FA /* Productreview2.xcdatamodeld */,
 				ECFF4BAC20E7B209000C57FA /* ProductCollectionViewController.swift */,
 				ECFF4BB020E7BFAA000C57FA /* ProductCollectionViewCell.swift */,
+				EC76EB9620EA1DE900184EA7 /* ShowReviewCollectionViewController.swift */,
+				EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */,
 				ECFF4BB220E7CB3D000C57FA /* Product.swift */,
+				EC76EB9A20EA3D5D00184EA7 /* ReviewProduct.swift */,
+				EC76EB9C20EA7A8100184EA7 /* AddReviewViewController.swift */,
 			);
 			path = Productreview2;
 			sourceTree = "<group>";
@@ -155,8 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECFF4BAD20E7B209000C57FA /* ProductCollectionViewController.swift in Sources */,
+				EC76EB9920EA25E900184EA7 /* ReviewCollectionViewCell.swift in Sources */,
+				EC76EB9D20EA7A8100184EA7 /* AddReviewViewController.swift in Sources */,
+				EC76EB9720EA1DE900184EA7 /* ShowReviewCollectionViewController.swift in Sources */,
 				ECFF4B9820E7ABC2000C57FA /* ViewController.swift in Sources */,
 				ECFF4BB120E7BFAA000C57FA /* ProductCollectionViewCell.swift in Sources */,
+				EC76EB9B20EA3D5D00184EA7 /* ReviewProduct.swift in Sources */,
 				ECFF4BB520E7F37D000C57FA /* ShowDetailViewController.swift in Sources */,
 				ECFF4B9E20E7ABC2000C57FA /* Productreview2.xcdatamodeld in Sources */,
 				ECFF4B9620E7ABC2000C57FA /* AppDelegate.swift in Sources */,

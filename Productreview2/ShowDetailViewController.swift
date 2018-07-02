@@ -19,6 +19,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
     @IBOutlet weak var productDesc: UITextView!
 	@IBOutlet weak var editButton: UIBarButtonItem!
 	
+	
 	var productDetail: Product?
 	var indexpathProduct: IndexPath?
 	var mode: Mode?
@@ -80,5 +81,8 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 		performSegue(withIdentifier: "ShowDetailEdit", sender: nil)
 	}
     
-  
+	@IBAction func ShowallReview(_ sender: Any) {
+		performSegue(withIdentifier: "ShowReview", sender: nil)
+	}
+	
 }

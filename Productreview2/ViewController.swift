@@ -119,12 +119,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
 			}
         }
     }
-    
-    @IBAction func Cancle(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-	
 	
 }
 

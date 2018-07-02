@@ -22,7 +22,6 @@ class Product{
     
 }
 
-
 struct UserModel {
 	static var product = [Product].init()
 }

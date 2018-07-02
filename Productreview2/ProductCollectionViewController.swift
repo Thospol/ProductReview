@@ -66,16 +66,8 @@ class ProductCollectionViewController: UICollectionViewController {
 		}
 		
 	}
-	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		print("You selected cell #\(indexPath.item)!")
-		if indexPath.row == 0 {
-			performSegue(withIdentifier: "AddItem", sender: nil)
-		} else {
-			pushData = UserModel.product[indexPath.row] //row เท่ากับ 1
-			self.indexPath = indexPath //กำหนดindexpath เพื่อส่งindexไปยังหน้าที่เราsegue
-			performSegue(withIdentifier: "ShowDetail", sender: nil) //วิ่งไปยัง seque ที่indentified ShowDetail แต่่มันจะไปทำprepareอิกทีเพื่อส่งข้อมูลไปยังหน้า controllerที่เราsegueไป
-		}
-	}
+	
+
 	
 	func loadSampleMeals() {
 		
@@ -92,15 +84,23 @@ class ProductCollectionViewController: UICollectionViewController {
 	}
 	
 	
+	
+	
+	
+	
 	@IBAction func unwindToProductList(sender: UIStoryboardSegue) {
-		//		if let sourceViewController = sender.source as? ViewController,
-		//			let products = sourceViewController.productser {
-		//
-		//			// Add a new meal.
-		//			let newIndexPath = IndexPath(row: product.count, section: 0)
-		//			product.append(products)
-		//			collectionView?.insertItems(at: [newIndexPath])
-		//		}
+	}
+	
+	
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {//เมื่อกดเลือก collectionviewสักอัน
+		print("You selected cell #\(indexPath.item)!")
+		if indexPath.row == 0 {
+			performSegue(withIdentifier: "AddItem", sender: nil)
+		} else {
+			pushData = UserModel.product[indexPath.row] //row เท่ากับ 1
+			self.indexPath = indexPath //กำหนดindexpath เพื่อส่งindexไปยังหน้าที่เราsegue
+			performSegue(withIdentifier: "ShowDetail", sender: nil) //วิ่งไปยัง seque ที่indentified ShowDetail แต่่มันจะไปทำprepareอิกทีเพื่อส่งข้อมูลไปยังหน้า controllerที่เราsegueไป
+		}
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //การแสดงผล
