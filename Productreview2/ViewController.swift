@@ -1,13 +1,11 @@
-//
-//  ViewController.swift
-//  Productreview2
-//
-//  Created by thospol on 30/6/61.
-//  Copyright © พ.ศ. 2561 thospol. All rights reserved.
-//
-
 import UIKit
 import os.log
+
+enum Mode {
+	case edit
+	case add
+}
+
 class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
 	
     @IBOutlet weak var productimage: UIImageView!
@@ -16,8 +14,21 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var productPrice: UITextField!
     @IBOutlet weak var productButton: UIButton!
 	
+	var dataProductViewcontroller : Product?
+	var indexpathProduct: IndexPath?
+	var mode: Mode? = Mode.add
+
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		if let product = dataProductViewcontroller {
+			navigationItem.title = product.product //แสดงบน navigation
+			productName.text   = product.product
+			productimage.image = product.photo
+			productdesc.text = product.desc
+			productPrice.text = String(product.price)
+		}
+		
         setTextView()
         updateSaveButtonState()
     }
@@ -84,9 +95,11 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
-    
+	
+	
+	
     //REMARK:- Segua
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //ทำงานหลังจากsegue ตอนกดปุ่มเพิ่มข้อมูล
         
         if productButton === sender as! UIButton {
             let photos = productimage.image
@@ -94,7 +107,16 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
             let desc = productdesc.text
             let price = productPrice.text
 			let product = Product(product: productname, photo: photos, desc: desc!, price: Int(price!)!)
-            UserModel.product.append(product)
+			
+			guard let mode = mode else { return }
+			
+			switch mode {
+			case .add:
+				UserModel.product.append(product)
+			case .edit:
+				guard let indexPath = indexpathProduct else { return }
+				UserModel.product[indexPath.row] = product
+			}
         }
     }
     
@@ -102,7 +124,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
         dismiss(animated: true, completion: nil)
     }
     
-
+	
+	
 }
 
 

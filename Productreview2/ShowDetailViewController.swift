@@ -9,16 +9,20 @@
 import UIKit
 import os.log
 class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
-    var productDetail: Product?
-    @IBOutlet weak var productimage: UIImageView!
-
+	
+	@IBOutlet weak var productimage: UIImageView!
     @IBOutlet weak var reviewRed: UILabel!
     @IBOutlet weak var reviewYellow: UILabel!
     @IBOutlet weak var reviewGreen: UILabel!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productDesc: UITextView!
-    
+	@IBOutlet weak var editButton: UIBarButtonItem!
+	
+	var productDetail: Product?
+	var indexpathProduct: IndexPath?
+	var mode: Mode?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         if let product = productDetail {
@@ -28,8 +32,6 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
             productDesc.text = product.desc
             productPrice.text = String(product.price)
         }
-   
-
     }
     
    
@@ -58,8 +60,25 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 		navigationController?.dismiss(animated: true, completion: nil)
         dismiss(animated: true, completion: nil)
     }
-    
-    
+	
+	
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //เป็นการส่งค่าไปยังcontrollerที่เราทำsegue
+		super.prepare(for: segue, sender: sender)
+		if let viewController = segue.destination as? ViewController{
+		if let data = productDetail {
+			viewController.dataProductViewcontroller = data
+			viewController.indexpathProduct = indexpathProduct
+			viewController.mode = mode //ส่งค่า modeไปยังController ที่ seque ไปซึ่งจะมีตัวแปรmodeอยู่
+			}
+		}
+	}
+	
+	
+	@IBAction func onEdit(sender: UIBarButtonItem) { //กดปุ่มedit ก็จะsegueไปยังidentitieที่performไว้ แล้วจะส่งค่าต่างๆที่func prepare
+		mode = Mode.edit
+		performSegue(withIdentifier: "ShowDetailEdit", sender: nil)
+	}
     
   
 }

@@ -7,6 +7,7 @@ class ProductCollectionViewController: UICollectionViewController {
 	let reuseIden2 = "cell2"
 	let array = ["","",""]
 	var pushData: Product?
+	var indexPath: IndexPath?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -19,7 +20,7 @@ class ProductCollectionViewController: UICollectionViewController {
 	}
 	
 	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return UserModel.product.count
+		return UserModel.product.count 
 	}
 	
 	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,7 +72,8 @@ class ProductCollectionViewController: UICollectionViewController {
 			performSegue(withIdentifier: "AddItem", sender: nil)
 		} else {
 			pushData = UserModel.product[indexPath.row] //row เท่ากับ 1
-			performSegue(withIdentifier: "ShowDetail", sender: nil)
+			self.indexPath = indexPath //กำหนดindexpath เพื่อส่งindexไปยังหน้าที่เราsegue
+			performSegue(withIdentifier: "ShowDetail", sender: nil) //วิ่งไปยัง seque ที่indentified ShowDetail แต่่มันจะไปทำprepareอิกทีเพื่อส่งข้อมูลไปยังหน้า controllerที่เราsegueไป
 		}
 	}
 	
@@ -91,14 +93,14 @@ class ProductCollectionViewController: UICollectionViewController {
 	
 	
 	@IBAction func unwindToProductList(sender: UIStoryboardSegue) {
-//		if let sourceViewController = sender.source as? ViewController,
-//			let products = sourceViewController.productser {
-//
-//			// Add a new meal.
-//			let newIndexPath = IndexPath(row: product.count, section: 0)
-//			product.append(products)
-//			collectionView?.insertItems(at: [newIndexPath])
-//		}
+		//		if let sourceViewController = sender.source as? ViewController,
+		//			let products = sourceViewController.productser {
+		//
+		//			// Add a new meal.
+		//			let newIndexPath = IndexPath(row: product.count, section: 0)
+		//			product.append(products)
+		//			collectionView?.insertItems(at: [newIndexPath])
+		//		}
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //การแสดงผล
@@ -107,6 +109,7 @@ class ProductCollectionViewController: UICollectionViewController {
 		if let viewController = segue.destination as? ShowDetailViewController { //อ้างอิงไปยัง segue ของ ShowDetailViewController
 			if let data = pushData {
 				viewController.productDetail = data //ส่งdataไปยัง controlellerที่segue
+				viewController.indexpathProduct = indexPath //ส่งindexpathไปยังcontrollerที่seguaหา
 			}
 		}
 		

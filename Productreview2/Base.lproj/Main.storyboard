@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -312,11 +313,12 @@
                     <navigationItem key="navigationItem" title="รายละเอียดสินค้า" id="zAr-jj-yzA">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="HmL-Se-Q2f">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetailEdit" id="zzw-ah-gdm"/>
+                                <action selector="onEditWithSender:" destination="rl9-5k-wPb" id="tnG-dx-mrm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="HmL-Se-Q2f" id="WSu-9y-G0Q"/>
                         <outlet property="productDesc" destination="Kum-bJ-wwG" id="Ng6-YZ-Wms"/>
                         <outlet property="productName" destination="dZF-8A-HBm" id="9Jb-gh-vEQ"/>
                         <outlet property="productPrice" destination="9Mp-hT-ayo" id="jRx-sD-0jD"/>
@@ -324,6 +326,7 @@
                         <outlet property="reviewGreen" destination="KG6-NG-ckF" id="ZBL-JV-McP"/>
                         <outlet property="reviewRed" destination="mYd-ol-q0O" id="FB3-Wm-vyC"/>
                         <outlet property="reviewYellow" destination="egJ-ml-pYB" id="lTH-gA-JgC"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetailEdit" id="mHi-Ne-Rzt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIN-c7-ziN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -334,6 +337,92 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1656.8" y="-423.39901477832512"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="S67-yM-YHm">
+            <objects>
+                <collectionViewController id="ZZu-E1-qNo" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4ic-Pz-DIm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kCQ-jt-APE">
+                            <size key="itemSize" width="375" height="157"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellReview" id="lWs-e2-hyu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="157"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ชื่อ:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQJ-M8-JTN">
+                                            <rect key="frame" x="20" y="0.0" width="24" height="27"/>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xr-30-ZHl">
+                                            <rect key="frame" x="48" y="0.0" width="40" height="27"/>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="วันที่:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukj-sf-mpM">
+                                            <rect key="frame" x="231" y="0.0" width="34" height="27"/>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB4-Au-NgN">
+                                            <rect key="frame" x="268" y="0.0" width="39.333333333333314" height="27"/>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ssu-lf-h02">
+                                            <rect key="frame" x="90" y="38" width="265" height="109"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lp3-7K-UzD">
+                                            <rect key="frame" x="56" y="38" width="30" height="30"/>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="ssu-lf-h02" secondAttribute="bottom" constant="2" id="95k-4a-a4e"/>
+                                    <constraint firstItem="pQJ-M8-JTN" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leading" constant="20" id="NNq-J1-zcH"/>
+                                    <constraint firstItem="lp3-7K-UzD" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leadingMargin" constant="48" id="NOR-en-a5h"/>
+                                    <constraint firstItem="5Xr-30-ZHl" firstAttribute="leading" secondItem="pQJ-M8-JTN" secondAttribute="trailing" constant="4" id="OAx-y3-wcJ"/>
+                                    <constraint firstItem="pQJ-M8-JTN" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="cpe-t7-8JH"/>
+                                    <constraint firstItem="lp3-7K-UzD" firstAttribute="top" secondItem="5Xr-30-ZHl" secondAttribute="bottom" constant="11" id="de7-D7-gwl"/>
+                                    <constraint firstItem="ssu-lf-h02" firstAttribute="leading" secondItem="lp3-7K-UzD" secondAttribute="trailing" constant="4" id="gCP-Uw-QpR"/>
+                                    <constraint firstItem="5Xr-30-ZHl" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="gEY-sa-6Ua"/>
+                                    <constraint firstItem="ukj-sf-mpM" firstAttribute="leading" secondItem="5Xr-30-ZHl" secondAttribute="trailing" constant="143" id="gqR-jc-cYi"/>
+                                    <constraint firstAttribute="trailing" secondItem="bB4-Au-NgN" secondAttribute="trailing" constant="67.670000000000002" id="mCb-8y-fC1"/>
+                                    <constraint firstItem="bB4-Au-NgN" firstAttribute="leading" secondItem="ukj-sf-mpM" secondAttribute="trailing" constant="3" id="odu-D4-Rgm"/>
+                                    <constraint firstItem="ukj-sf-mpM" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="p6U-8e-kYL"/>
+                                    <constraint firstItem="ssu-lf-h02" firstAttribute="top" secondItem="ukj-sf-mpM" secondAttribute="bottom" constant="11" id="pNQ-4X-eck"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="ssu-lf-h02" secondAttribute="trailing" constant="12" id="zYq-BX-yp7"/>
+                                    <constraint firstItem="bB4-Au-NgN" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="zbR-Hp-Uf0"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ZZu-E1-qNo" id="lep-La-a1C"/>
+                            <outlet property="delegate" destination="ZZu-E1-qNo" id="c6y-uD-FiU"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dWJ-cG-mfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1391" y="318"/>
         </scene>
         <!--เพิ่มสินค้า-->
         <scene sceneID="tne-QT-ifu">
@@ -404,7 +493,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="QEl-0S-iPG" kind="unwind" unwindAction="unwindToProductListWithSender:" id="Csk-sA-I57"/>
+                                    <segue destination="QEl-0S-iPG" kind="unwind" unwindAction="unwindToProductListWithSender:" id="vdI-Om-jwc"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="กรุณากรอกข้อมูลรายละเอียด..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fnT-Vp-aTl">
@@ -486,6 +575,6 @@
         <image name="addproduct" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wEo-GU-gUW"/>
+        <segue reference="mHi-Ne-Rzt"/>
     </inferredMetricsTieBreakers>
 </document>
