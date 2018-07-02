@@ -68,6 +68,7 @@
 			children = (
 				ECFF4B9520E7ABC2000C57FA /* AppDelegate.swift */,
 				ECFF4B9720E7ABC2000C57FA /* ViewController.swift */,
+				ECFF4BB420E7F37D000C57FA /* ShowDetailViewController.swift */,
 				ECFF4B9920E7ABC2000C57FA /* Main.storyboard */,
 				ECFF4BAA20E7ABE9000C57FA /* SukhumvitSet.ttc */,
 				ECFF4B9F20E7ABC4000C57FA /* Assets.xcassets */,
@@ -77,7 +78,6 @@
 				ECFF4BAC20E7B209000C57FA /* ProductCollectionViewController.swift */,
 				ECFF4BB020E7BFAA000C57FA /* ProductCollectionViewCell.swift */,
 				ECFF4BB220E7CB3D000C57FA /* Product.swift */,
-				ECFF4BB420E7F37D000C57FA /* ShowDetailViewController.swift */,
 			);
 			path = Productreview2;
 			sourceTree = "<group>";

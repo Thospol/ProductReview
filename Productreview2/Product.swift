@@ -13,11 +13,16 @@ class Product{
     var desc: String
     var price: Int
     
-    init?(product: String, photo: UIImage?, desc: String,price: Int) {
+    init(product: String, photo: UIImage?, desc: String,price: Int) {
         self.product = product
         self.photo = photo
         self.desc = desc
         self.price = price
     }
     
+}
+
+
+struct UserModel {
+	static var product = [Product].init()
 }

@@ -9,17 +9,28 @@
 import UIKit
 import os.log
 class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
-    var product: Product?
+	
     @IBOutlet weak var productimage: UIImageView!
     @IBOutlet weak var productName: UITextField!
     @IBOutlet weak var productdesc: UITextView!
     @IBOutlet weak var productPrice: UITextField!
     @IBOutlet weak var productButton: UIButton!
-    
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTextView()
         updateSaveButtonState()
-      
+    }
+ 
+    func setTextView(){
+        productdesc.layer.borderWidth = 1.0
+        productdesc.layer.borderColor = UIColor.clear.cgColor
+        productdesc.layer.masksToBounds = true
+        productdesc.layer.shadowColor = UIColor.black.cgColor
+        productdesc.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        productdesc.layer.shadowOpacity = 1.0
+        productdesc.layer.shadowRadius = 2.0
+        productdesc.layer.backgroundColor = UIColor.clear.cgColor
     }
     
     //REMARK:- delegateTextField
@@ -82,9 +93,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate, UINaviga
             let productname = productName.text ?? ""
             let desc = productdesc.text
             let price = productPrice.text
-            
-            
-            product = Product(product: productname, photo: photos, desc: desc!, price: Int(price!)!)
+			let product = Product(product: productname, photo: photos, desc: desc!, price: Int(price!)!)
+            UserModel.product.append(product)
         }
     }
     
