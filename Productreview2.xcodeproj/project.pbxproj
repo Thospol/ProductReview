@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC76EB9720EA1DE900184EA7 /* ShowReviewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9620EA1DE900184EA7 /* ShowReviewCollectionViewController.swift */; };
+		EC76EB9720EA1DE900184EA7 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9620EA1DE900184EA7 /* ReviewViewController.swift */; };
 		EC76EB9920EA25E900184EA7 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */; };
 		EC76EB9B20EA3D5D00184EA7 /* ReviewProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9A20EA3D5D00184EA7 /* ReviewProduct.swift */; };
 		EC76EB9D20EA7A8100184EA7 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9C20EA7A8100184EA7 /* AddReviewViewController.swift */; };
@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EC76EB9620EA1DE900184EA7 /* ShowReviewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowReviewCollectionViewController.swift; sourceTree = "<group>"; };
+		EC76EB9620EA1DE900184EA7 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC76EB9A20EA3D5D00184EA7 /* ReviewProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProduct.swift; sourceTree = "<group>"; };
 		EC76EB9C20EA7A8100184EA7 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ECEE97C720EB9F83003EE9D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECFF4BB220E7CB3D000C57FA /* Product.swift */,
+				EC76EB9A20EA3D5D00184EA7 /* ReviewProduct.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ECFF4B8920E7ABC2000C57FA = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +83,7 @@
 		ECFF4B9420E7ABC2000C57FA /* Productreview2 */ = {
 			isa = PBXGroup;
 			children = (
+				ECEE97C720EB9F83003EE9D8 /* Model */,
 				ECFF4B9520E7ABC2000C57FA /* AppDelegate.swift */,
 				ECFF4B9720E7ABC2000C57FA /* ViewController.swift */,
 				ECFF4BB420E7F37D000C57FA /* ShowDetailViewController.swift */,
@@ -85,10 +95,8 @@
 				ECFF4B9C20E7ABC2000C57FA /* Productreview2.xcdatamodeld */,
 				ECFF4BAC20E7B209000C57FA /* ProductCollectionViewController.swift */,
 				ECFF4BB020E7BFAA000C57FA /* ProductCollectionViewCell.swift */,
-				EC76EB9620EA1DE900184EA7 /* ShowReviewCollectionViewController.swift */,
+				EC76EB9620EA1DE900184EA7 /* ReviewViewController.swift */,
 				EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */,
-				ECFF4BB220E7CB3D000C57FA /* Product.swift */,
-				EC76EB9A20EA3D5D00184EA7 /* ReviewProduct.swift */,
 				EC76EB9C20EA7A8100184EA7 /* AddReviewViewController.swift */,
 			);
 			path = Productreview2;
@@ -169,7 +177,7 @@
 				ECFF4BAD20E7B209000C57FA /* ProductCollectionViewController.swift in Sources */,
 				EC76EB9920EA25E900184EA7 /* ReviewCollectionViewCell.swift in Sources */,
 				EC76EB9D20EA7A8100184EA7 /* AddReviewViewController.swift in Sources */,
-				EC76EB9720EA1DE900184EA7 /* ShowReviewCollectionViewController.swift in Sources */,
+				EC76EB9720EA1DE900184EA7 /* ReviewViewController.swift in Sources */,
 				ECFF4B9820E7ABC2000C57FA /* ViewController.swift in Sources */,
 				ECFF4BB120E7BFAA000C57FA /* ProductCollectionViewCell.swift in Sources */,
 				EC76EB9B20EA3D5D00184EA7 /* ReviewProduct.swift in Sources */,

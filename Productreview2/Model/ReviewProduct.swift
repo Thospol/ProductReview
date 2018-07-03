@@ -1,5 +1,5 @@
-
 import UIKit
+
 class ReviewProduct {
 	var RProductName: String
 	var RProductImage: UIImage?
@@ -18,12 +18,22 @@ class ReviewProduct {
 		self.RName = RName
 		self.RDate = RDate
 	}
+	
+	var viewDate: String {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+		let myString = formatter.string(from: RDate!)
+		let yourDate = formatter.date(from: myString)!
+		formatter.dateFormat = "dd-MMM-yyyy"
+		
+		return formatter.string(from: yourDate)
+	}
 }
 
 enum ReviewRank {
 	case veryGood,good,bad
 }
 
-struct ModelReview {
-	static var ReviewProducts = [ReviewProduct].init()
-}
+//struct ModelReview {
+//	static var ReviewProducts = [ReviewProduct].init()
+//}

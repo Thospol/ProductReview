@@ -5,7 +5,6 @@ class ProductCollectionViewController: UICollectionViewController {
 	
 	let reuseIdentifier = "cell1"
 	let reuseIden2 = "cell2"
-	let array = ["","",""]
 	var pushData: Product?
 	var indexPath: IndexPath?
 	
@@ -27,41 +26,11 @@ class ProductCollectionViewController: UICollectionViewController {
 		
 		if indexPath.item == 0 {
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ProductCollectionViewCell
-			
-			
-			cell.contentView.layer.cornerRadius = 10
-			cell.contentView.layer.borderWidth = 1.0
-			cell.contentView.layer.borderColor = UIColor.clear.cgColor
-			cell.contentView.layer.masksToBounds = true
-			cell.layer.shadowColor = UIColor.gray.cgColor
-			cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-			cell.layer.shadowRadius = 2.0
-			cell.layer.shadowOpacity = 1.0
-			cell.layer.masksToBounds = false
-			cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
 			return cell
-		}
-		else {
+		}else {
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIden2, for: indexPath as IndexPath) as! ProductCollectionViewCell
 			let products = UserModel.product[indexPath.row]
-			cell.productImage.image = products.photo
-			cell.productName.text = products.product
-			cell.productReview.text = products.desc //ยังแปลก
-			cell.productPrice.text = String(products.price)
-			cell.productReview.text = "5"
-			
-			
-			cell.contentView.layer.cornerRadius = 10
-			cell.contentView.layer.borderWidth = 1.0
-			cell.contentView.layer.borderColor = UIColor.clear.cgColor
-			cell.contentView.layer.masksToBounds = true
-			cell.layer.shadowColor = UIColor.gray.cgColor
-			cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-			cell.layer.shadowRadius = 2.0
-			cell.layer.shadowOpacity = 1.0
-			cell.layer.masksToBounds = false
-			cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-			//cell.backgroundColor = UIColor.lightGray
+			cell.configureData(value: products) // configureData เซ้ตdataไว้
 			return cell
 		}
 		
