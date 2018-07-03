@@ -5,7 +5,8 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var productDateReview: UILabel!
 	@IBOutlet weak var productReviewIcon: UIButton!
 	@IBOutlet weak var productDescReview: UITextView!
-
+	@IBOutlet weak var productRank: UILabel!
+	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		
@@ -22,8 +23,9 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 	}
 	
 	func configureWith(value: ReviewProduct) {
-		productNameReview.text = value.RProductName
+		productNameReview.text = value.RName
 		productDateReview.text = value.viewDate
-		productDescReview.text = value.RProductDesc
+		productDescReview.text = value.RComment
+		productRank.text = value.RIcon?.rawValue
 	}
 }

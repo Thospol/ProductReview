@@ -23,10 +23,11 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 	var productDetail: Product?
 	var indexpathProduct: IndexPath?
 	var mode: Mode?
-	
+	var checkNameProduct: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         if let product = productDetail {
+			print(indexpathProduct)
             navigationItem.title = product.product //แสดงบน navigation
             productName.text   = product.product
             productimage.image = product.photo
@@ -70,11 +71,22 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 		if let data = productDetail {
 			viewController.dataProductViewcontroller = data
 			viewController.indexpathProduct = indexpathProduct
+			print("Data is:\(data)")
+			print("Index path is:\(viewController.indexpathProduct!)")
 			viewController.mode = mode //ส่งค่า modeไปยังController ที่ seque ไปซึ่งจะมีตัวแปรmodeอยู่
 			}
 		}
+		if let ReviewViewController = segue.destination as? ReviewViewController{
+			if let data = productDetail{
+			ReviewViewController.productFromProduct = data
+			ReviewViewController.checkNameProduct = checkNameProduct
+			ReviewViewController.indexpathProduct = indexpathProduct
+			print("Data is:\(data)")
+			print("Index path is:\(ReviewViewController.indexpathProduct!)")
+			print("NameProduct is: \(ReviewViewController.checkNameProduct!)")
+			}
+		}
 	}
-	
 	
 	@IBAction func onEdit(sender: UIBarButtonItem) { //กดปุ่มedit ก็จะsegueไปยังidentitieที่performไว้ แล้วจะส่งค่าต่างๆที่func prepare
 		mode = Mode.edit

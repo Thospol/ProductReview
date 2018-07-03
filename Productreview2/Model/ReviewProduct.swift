@@ -30,10 +30,14 @@ class ReviewProduct {
 	}
 }
 
-enum ReviewRank {
-	case veryGood,good,bad
-}
+enum ReviewRank:String {
+	case veryGood = "ดีมาก"
+	case good = "ปกติ"
+	case bad = "แย่"
+	
+	}
 
-//struct ModelReview {
-//	static var ReviewProducts = [ReviewProduct].init()
-//}
+
+struct ModelReview {
+	static var ReviewProducts = [ReviewProduct].init()
+}

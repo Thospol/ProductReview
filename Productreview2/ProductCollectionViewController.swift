@@ -7,7 +7,7 @@ class ProductCollectionViewController: UICollectionViewController {
 	let reuseIden2 = "cell2"
 	var pushData: Product?
 	var indexPath: IndexPath?
-	
+	var checkNameProduct:String?
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		loadSampleMeals()
@@ -58,6 +58,7 @@ class ProductCollectionViewController: UICollectionViewController {
 	
 	
 	@IBAction func unwindToProductList(sender: UIStoryboardSegue) {
+		
 	}
 	
 	
@@ -75,10 +76,13 @@ class ProductCollectionViewController: UICollectionViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //การแสดงผล
 		super.prepare(for: segue, sender: sender)
 		
-		if let viewController = segue.destination as? ShowDetailViewController { //อ้างอิงไปยัง segue ของ ShowDetailViewController
+		if let ShowDetailViewController = segue.destination as? ShowDetailViewController { //อ้างอิงไปยัง segue ของ ShowDetailViewController
 			if let data = pushData {
-				viewController.productDetail = data //ส่งdataไปยัง controlellerที่segue
-				viewController.indexpathProduct = indexPath //ส่งindexpathไปยังcontrollerที่seguaหา
+				ShowDetailViewController.productDetail = data //ส่งdataไปยัง controlellerที่segue
+				ShowDetailViewController.indexpathProduct = indexPath //ส่งindexpathไปยังcontrollerที่seguaหา
+				ShowDetailViewController.checkNameProduct = data.product
+				
+				
 			}
 		}
 		
