@@ -14,6 +14,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
+	
     @IBOutlet weak var productReview: UILabel!
 	
 	override func awakeFromNib() {
@@ -34,7 +35,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 		productName.text = value.product
 		productReview.text = value.desc 
 		productPrice.text = String(value.price)
-		productReview.text = "5"
+		productReview.text = String(value.reviewProduct.count)
 	}
 }
 

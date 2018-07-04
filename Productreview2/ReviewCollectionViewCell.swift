@@ -6,10 +6,11 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var productReviewIcon: UIButton!
 	@IBOutlet weak var productDescReview: UITextView!
 	@IBOutlet weak var productRank: UILabel!
+	@IBOutlet weak var productName: UILabel!
 	
 	override func awakeFromNib() {
-		super.awakeFromNib()
 		
+		super.awakeFromNib()
 		contentView.layer.cornerRadius = 10
 		contentView.layer.borderWidth = 1.0
 		contentView.layer.borderColor = UIColor.clear.cgColor
@@ -21,11 +22,12 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 		layer.masksToBounds = false
 		layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius:contentView.layer.cornerRadius).cgPath
 	}
-	
 	func configureWith(value: ReviewProduct) {
 		productNameReview.text = value.RName
 		productDateReview.text = value.viewDate
 		productDescReview.text = value.RComment
-		productRank.text = value.RIcon?.rawValue
+		productRank.text =  value.RIcon?.rawValue
+		productName.text = value.RProductName
+		productReviewIcon.backgroundColor = value.colorButton
 	}
 }

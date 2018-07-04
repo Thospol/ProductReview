@@ -11,9 +11,9 @@ import os.log
 class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
 	
 	@IBOutlet weak var productimage: UIImageView!
-    @IBOutlet weak var reviewRed: UILabel!
-    @IBOutlet weak var reviewYellow: UILabel!
-    @IBOutlet weak var reviewGreen: UILabel!
+    @IBOutlet weak var reviewCountRed: UILabel!
+    @IBOutlet weak var reviewCountYellow: UILabel!
+    @IBOutlet weak var reviewCountGreen: UILabel!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productDesc: UITextView!
@@ -24,19 +24,25 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 	var indexpathProduct: IndexPath?
 	var mode: Mode?
 	var checkNameProduct: String?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let product = productDetail {
-			print(indexpathProduct)
-            navigationItem.title = product.product //แสดงบน navigation
-            productName.text   = product.product
-            productimage.image = product.photo
-            productDesc.text = product.desc
-            productPrice.text = String(product.price)
-        }
     }
-    
-   
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if let product = productDetail {
+			product.manageRank()
+			navigationItem.title = product.product
+			productName.text   = product.product
+			productimage.image = product.photo
+			productDesc.text = product.desc
+			productPrice.text = String(product.price)
+			reviewCountGreen.text = String(product.veryGoods)
+			reviewCountYellow.text = String(product.goods)
+			reviewCountRed.text = String(product.bads)
+		}
+	}
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }

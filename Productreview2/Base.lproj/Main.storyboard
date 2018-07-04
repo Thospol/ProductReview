@@ -382,9 +382,9 @@
                         <outlet property="productName" destination="dZF-8A-HBm" id="9Jb-gh-vEQ"/>
                         <outlet property="productPrice" destination="9Mp-hT-ayo" id="jRx-sD-0jD"/>
                         <outlet property="productimage" destination="fYT-ZJ-IOW" id="y0U-au-Zkf"/>
-                        <outlet property="reviewGreen" destination="KG6-NG-ckF" id="ZBL-JV-McP"/>
-                        <outlet property="reviewRed" destination="mYd-ol-q0O" id="FB3-Wm-vyC"/>
-                        <outlet property="reviewYellow" destination="egJ-ml-pYB" id="lTH-gA-JgC"/>
+                        <outlet property="reviewCountGreen" destination="KG6-NG-ckF" id="F1n-cF-bPh"/>
+                        <outlet property="reviewCountRed" destination="mYd-ol-q0O" id="KGh-6C-TPF"/>
+                        <outlet property="reviewCountYellow" destination="egJ-ml-pYB" id="5p4-O8-iPS"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetailEdit" id="mHi-Ne-Rzt"/>
                         <segue destination="ZZu-E1-qNo" kind="show" identifier="ShowReview" id="bH7-aV-ht3"/>
                     </connections>
@@ -433,7 +433,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lp3-7K-UzD">
-                                            <rect key="frame" x="56" y="38" width="30" height="30"/>
+                                            <rect key="frame" x="78" y="38" width="30" height="30"/>
                                             <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -459,38 +459,60 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxD-rd-CS1">
-                                            <rect key="frame" x="14.000000000000004" y="39" width="39.333333333333343" height="27"/>
+                                            <rect key="frame" x="38" y="39" width="39.333333333333343" height="27"/>
                                             <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ไม่มีข้อมูล..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ssu-lf-h02">
-                                            <rect key="frame" x="90" y="34" width="247" height="109"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <rect key="frame" x="109" y="34" width="247" height="109"/>
+                                            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="109" id="0f8-1Y-j4P"/>
+                                                <constraint firstAttribute="width" constant="247" id="mWE-mD-xAq"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" text="สินค้า:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX0-DS-zfa">
+                                            <rect key="frame" x="0.0" y="124" width="43" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hI-8C-gQG">
+                                            <rect key="frame" x="44" y="124" width="64" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="lp3-7K-UzD" firstAttribute="leading" secondItem="NxD-rd-CS1" secondAttribute="trailing" constant="2.6699999999999999" id="7h3-f0-H9A"/>
-                                    <constraint firstItem="NxD-rd-CS1" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leadingMargin" constant="6" id="AEg-10-Bxr"/>
+                                    <constraint firstItem="ssu-lf-h02" firstAttribute="leading" secondItem="lp3-7K-UzD" secondAttribute="trailing" constant="1" id="4Wa-Ht-UAb"/>
+                                    <constraint firstItem="NxD-rd-CS1" firstAttribute="top" secondItem="pQJ-M8-JTN" secondAttribute="bottom" constant="12" id="7t2-zJ-rms"/>
+                                    <constraint firstAttribute="trailing" secondItem="ssu-lf-h02" secondAttribute="trailing" constant="1" id="9lP-eK-L5s"/>
                                     <constraint firstItem="ukj-sf-mpM" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="AwR-aw-Jiu"/>
                                     <constraint firstItem="pQJ-M8-JTN" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leading" constant="20" id="NNq-J1-zcH"/>
-                                    <constraint firstItem="lp3-7K-UzD" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leadingMargin" constant="48" id="NOR-en-a5h"/>
                                     <constraint firstItem="5Xr-30-ZHl" firstAttribute="leading" secondItem="pQJ-M8-JTN" secondAttribute="trailing" constant="4" id="OAx-y3-wcJ"/>
-                                    <constraint firstItem="ssu-lf-h02" firstAttribute="top" secondItem="ukj-sf-mpM" secondAttribute="bottom" constant="7" id="QPM-Nv-28X"/>
-                                    <constraint firstItem="ssu-lf-h02" firstAttribute="leading" secondItem="lp3-7K-UzD" secondAttribute="trailing" constant="4" id="Sr1-sH-Wm0"/>
                                     <constraint firstItem="bB4-Au-NgN" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="XlY-xd-DJi"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="ssu-lf-h02" secondAttribute="bottom" constant="6" id="aeO-sM-XAb"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="ssu-lf-h02" secondAttribute="trailing" constant="12" id="cYg-qD-1d1"/>
+                                    <constraint firstAttribute="bottom" secondItem="ssu-lf-h02" secondAttribute="bottom" constant="14" id="a2L-vS-GaK"/>
+                                    <constraint firstItem="lp3-7K-UzD" firstAttribute="top" secondItem="5Xr-30-ZHl" secondAttribute="bottom" constant="11" id="b0b-k1-0n3"/>
                                     <constraint firstItem="bB4-Au-NgN" firstAttribute="leading" secondItem="ukj-sf-mpM" secondAttribute="trailing" constant="8" id="ceT-V9-gCl"/>
                                     <constraint firstItem="pQJ-M8-JTN" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="cpe-t7-8JH"/>
-                                    <constraint firstItem="lp3-7K-UzD" firstAttribute="top" secondItem="5Xr-30-ZHl" secondAttribute="bottom" constant="11" id="de7-D7-gwl"/>
                                     <constraint firstItem="5Xr-30-ZHl" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="gEY-sa-6Ua"/>
+                                    <constraint firstItem="NxD-rd-CS1" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leadingMargin" constant="30" id="gRX-pb-vFw"/>
+                                    <constraint firstItem="ssu-lf-h02" firstAttribute="top" secondItem="ukj-sf-mpM" secondAttribute="bottom" constant="7" id="qDn-Na-rZU"/>
                                     <constraint firstItem="ukj-sf-mpM" firstAttribute="leading" secondItem="5Xr-30-ZHl" secondAttribute="trailing" constant="70.670000000000002" id="v8I-gB-hKg"/>
-                                    <constraint firstItem="NxD-rd-CS1" firstAttribute="top" secondItem="pQJ-M8-JTN" secondAttribute="bottom" constant="12" id="w34-Sp-WFr"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -501,6 +523,7 @@
                                 <connections>
                                     <outlet property="productDateReview" destination="bB4-Au-NgN" id="GEm-n2-vCU"/>
                                     <outlet property="productDescReview" destination="ssu-lf-h02" id="Jux-YF-pkm"/>
+                                    <outlet property="productName" destination="3hI-8C-gQG" id="thd-tk-DLk"/>
                                     <outlet property="productNameReview" destination="5Xr-30-ZHl" id="YkZ-5C-qj9"/>
                                     <outlet property="productRank" destination="NxD-rd-CS1" id="bZy-DL-bxD"/>
                                     <outlet property="productReviewIcon" destination="lp3-7K-UzD" id="zCg-Xt-alw"/>
@@ -839,6 +862,18 @@
                                     <segue destination="K6e-qt-Eqs" kind="unwind" unwindAction="unwindToReviewProductListWithSender:" id="qu5-C8-HX2"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SaT-Au-W8L">
+                                <rect key="frame" x="286" y="299" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N8s-qI-Fj8">
+                                <rect key="frame" x="286" y="333" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7P-Hu-MMz">
+                                <rect key="frame" x="286" y="261" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -909,7 +944,7 @@
                 <exit id="K6e-qt-Eqs" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="cvg-jl-img"/>
             </objects>
-            <point key="canvasLocation" x="2321" y="1013"/>
+            <point key="canvasLocation" x="2320.8000000000002" y="1012.3152709359606"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xFt-mu-1hZ">
@@ -935,6 +970,6 @@
         <image name="addproduct" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mHi-Ne-Rzt"/>
+        <segue reference="wEo-GU-gUW"/>
     </inferredMetricsTieBreakers>
 </document>

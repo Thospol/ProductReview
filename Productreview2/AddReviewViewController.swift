@@ -21,6 +21,9 @@ class AddReviewViewController: UIViewController {
 	var dataProduct : Product?
 	var indexpathProduct: IndexPath?
 	var Rank: ReviewRank? = ReviewRank.veryGood
+	var color: UIColor?
+	var countCheckClick: Int = 0
+	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,23 +44,59 @@ class AddReviewViewController: UIViewController {
 			let ranking = Rank
 			let reviewDesc = peoductReviewDesc.text ?? ""
 			let nameReviews = nameReview.text ?? ""
+			let colorset = color
 			
-			let review = ReviewProduct(RProductName: productname, RProductImage: photos, RProductDesc: productDesccription, RIcon: ranking, RComment: reviewDesc, RName: nameReviews, RDate: Date())
-			ModelReview.ReviewProducts.append(review)
+			let review = ReviewProduct(RProductName: productname, RProductImage: photos, RProductDesc: productDesccription, RIcon: ranking, RComment: reviewDesc, RName: nameReviews, RDate: Date(), colorButton: colorset)
+			
+			let row = indexpathProduct?.row ?? 0
+			UserModel.product[row].reviewProduct.append(review)
+			
+			
 		}
 	}
 	
 	//REMARK:-Icon
 	@IBAction func ClickIconGreen(_ sender: Any) {
+		if countCheckClick == 0 {
+		colorRed.alpha = 0
+		colorYellow.alpha = 0
+			countCheckClick = 1
+		}else if countCheckClick == 1 {
+			colorRed.alpha = 1
+			colorYellow.alpha = 1
+			countCheckClick = 0
+		}
 		Rank = ReviewRank.veryGood
+		color = UIColor.green
 		print("VeryGood")
+		
 	}
 	@IBAction func ClickIconYellow(_ sender: Any) {
+		if countCheckClick == 0 {
+			colorGreen.alpha = 0
+			colorRed.alpha = 0
+			countCheckClick = 1
+		}else if countCheckClick == 1 {
+			colorGreen.alpha = 1
+			colorRed.alpha = 1
+			countCheckClick = 0
+		}
 		Rank = ReviewRank.good
+		color = UIColor.yellow
 		print("Good")
 	}
 	@IBAction func ClickIconRed(_ sender: Any) {
+		if countCheckClick == 0 {
+			colorGreen.alpha = 0
+			colorYellow.alpha = 0
+			countCheckClick = 1
+		}else if countCheckClick == 1 {
+			colorGreen.alpha = 1
+			colorYellow.alpha = 1
+			countCheckClick = 0
+		}
 		Rank = ReviewRank.bad
+		color = UIColor.red
 		print("Bad")
 	}
 	

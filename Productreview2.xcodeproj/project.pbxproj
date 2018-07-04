@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC3882E020EC66B000C60281 /* Productreview2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3882DF20EC66B000C60281 /* Productreview2Tests.swift */; };
 		EC76EB9720EA1DE900184EA7 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9620EA1DE900184EA7 /* ReviewViewController.swift */; };
 		EC76EB9920EA25E900184EA7 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */; };
 		EC76EB9B20EA3D5D00184EA7 /* ReviewProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9A20EA3D5D00184EA7 /* ReviewProduct.swift */; };
@@ -24,7 +25,20 @@
 		ECFF4BB520E7F37D000C57FA /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFF4BB420E7F37D000C57FA /* ShowDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EC3882E220EC66B000C60281 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ECFF4B8A20E7ABC2000C57FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ECFF4B9120E7ABC2000C57FA;
+			remoteInfo = Productreview2;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		EC3882DD20EC66B000C60281 /* Productreview2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Productreview2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC3882DF20EC66B000C60281 /* Productreview2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productreview2Tests.swift; sourceTree = "<group>"; };
+		EC3882E120EC66B000C60281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC76EB9620EA1DE900184EA7 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC76EB9A20EA3D5D00184EA7 /* ReviewProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewProduct.swift; sourceTree = "<group>"; };
@@ -45,6 +59,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EC3882DA20EC66B000C60281 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECFF4B8F20E7ABC2000C57FA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC3882DE20EC66B000C60281 /* Productreview2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EC3882DF20EC66B000C60281 /* Productreview2Tests.swift */,
+				EC3882E120EC66B000C60281 /* Info.plist */,
+			);
+			path = Productreview2Tests;
+			sourceTree = "<group>";
+		};
 		ECEE97C720EB9F83003EE9D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				ECFF4B9420E7ABC2000C57FA /* Productreview2 */,
+				EC3882DE20EC66B000C60281 /* Productreview2Tests */,
 				ECFF4B9320E7ABC2000C57FA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				ECFF4B9220E7ABC2000C57FA /* Productreview2.app */,
+				EC3882DD20EC66B000C60281 /* Productreview2Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +137,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EC3882DC20EC66B000C60281 /* Productreview2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC3882E620EC66B000C60281 /* Build configuration list for PBXNativeTarget "Productreview2Tests" */;
+			buildPhases = (
+				EC3882D920EC66B000C60281 /* Sources */,
+				EC3882DA20EC66B000C60281 /* Frameworks */,
+				EC3882DB20EC66B000C60281 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC3882E320EC66B000C60281 /* PBXTargetDependency */,
+			);
+			name = Productreview2Tests;
+			productName = Productreview2Tests;
+			productReference = EC3882DD20EC66B000C60281 /* Productreview2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ECFF4B9120E7ABC2000C57FA /* Productreview2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECFF4BA720E7ABC4000C57FA /* Build configuration list for PBXNativeTarget "Productreview2" */;
@@ -132,6 +182,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = thospol;
 				TargetAttributes = {
+					EC3882DC20EC66B000C60281 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = ECFF4B9120E7ABC2000C57FA;
+					};
 					ECFF4B9120E7ABC2000C57FA = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -151,11 +205,19 @@
 			projectRoot = "";
 			targets = (
 				ECFF4B9120E7ABC2000C57FA /* Productreview2 */,
+				EC3882DC20EC66B000C60281 /* Productreview2Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EC3882DB20EC66B000C60281 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECFF4B9020E7ABC2000C57FA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,6 +232,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EC3882D920EC66B000C60281 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC3882E020EC66B000C60281 /* Productreview2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ECFF4B8E20E7ABC2000C57FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,6 +259,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC3882E320EC66B000C60281 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ECFF4B9120E7ABC2000C57FA /* Productreview2 */;
+			targetProxy = EC3882E220EC66B000C60281 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ECFF4B9920E7ABC2000C57FA /* Main.storyboard */ = {
@@ -210,6 +288,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EC3882E420EC66B000C60281 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Productreview2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thospol032.Productreview2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Productreview2.app/Productreview2";
+			};
+			name = Debug;
+		};
+		EC3882E520EC66B000C60281 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Productreview2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.thospol032.Productreview2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Productreview2.app/Productreview2";
+			};
+			name = Release;
+		};
 		ECFF4BA520E7ABC4000C57FA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -361,6 +477,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EC3882E620EC66B000C60281 /* Build configuration list for PBXNativeTarget "Productreview2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC3882E420EC66B000C60281 /* Debug */,
+				EC3882E520EC66B000C60281 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ECFF4B8D20E7ABC2000C57FA /* Build configuration list for PBXProject "Productreview2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

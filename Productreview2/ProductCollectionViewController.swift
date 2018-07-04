@@ -52,16 +52,10 @@ class ProductCollectionViewController: UICollectionViewController {
 		collectionView?.reloadData()
 	}
 	
-	
-	
-	
-	
-	
 	@IBAction func unwindToProductList(sender: UIStoryboardSegue) {
 		
 	}
-	
-	
+
 	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {//เมื่อกดเลือก collectionviewสักอัน
 		print("You selected cell #\(indexPath.item)!")
 		if indexPath.row == 0 {
